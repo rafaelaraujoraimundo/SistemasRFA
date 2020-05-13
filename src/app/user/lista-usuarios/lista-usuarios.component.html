@@ -1,0 +1,30 @@
+<po-container>
+  <po-button p-icon='po-icon-user-add' p-label="Adicionar" (p-click)="AddUser()"> </po-button>
+</po-container>
+
+<po-container>
+  <po-table [p-columns]="columns" [p-items]="items" p-sort="true" [p-striped]="true">
+    <ng-template p-table-row-template let-rowItem let-i="rowIndex">
+      <po-widget p-title="Detalhes do Usuario: {{ rowItem.firstname }} {{ rowItem.lastname }}">
+        <div class="po-row">
+
+        </div>
+
+        <div class="po-row">
+          <po-info
+            class="po-md-4"
+            p-label="Cargo"
+            p-orientation="horizontal"
+            [p-value]="rowItem.cargo"
+          >
+          </po-info>
+
+          <po-info class="po-md-4" p-label="Tel. Fixo" p-orientation="horizontal" [p-value]="rowItem.fixo"> </po-info>
+
+          <po-info class="po-md-4" p-label="Tel. Celular" p-orientation="horizontal" [p-value]="rowItem.celular">
+          </po-info>
+        </div>
+      </po-widget>
+    </ng-template>
+  </po-table>
+</po-container>

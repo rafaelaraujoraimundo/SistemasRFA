@@ -1,0 +1,35 @@
+<po-container>
+
+  <form [formGroup]="reactiveForm">
+    <div class="po-row">
+      <po-input class="po-md-4" p-disabled formControlName="_id" p-clean p-icon="po-icon po-icon-world" p-label="ID"> </po-input>
+    </div>
+      <div class="po-row">
+      <po-input class="po-md-5" formControlName="firstname" p-clean p-icon="po-icon-user" p-label="Nome"> </po-input>
+      <po-input class="po-md-7" formControlName="lastname" p-clean p-icon="po-icon-user" p-label="Sobrenome"> </po-input>
+    </div>
+    <div class="po-row">
+      <po-input class="po-md-12" formControlName="cargo" p-clean p-icon="po-icon-company" p-label="cargo"> </po-input>
+    </div>
+
+    <div class="po-row">
+      <po-input class="po-lg-4" formControlName="fixo" p-clean p-icon="po-icon-telephone" p-label="Telefone Fixo"> </po-input>
+      <po-input class="po-lg-4" formControlName="celular" p-icon="po-icon-telephone" p-label="Telefone Celular" p-clean> </po-input>
+      <po-combo class="po-lg-4" name="combo" formControlName="filial" p-label="Filial" [p-options]="filiais"> </po-combo>
+    </div>
+
+    <div class="po-row">
+      <po-email class="po-lg-6" p-disabled formControlName="email" p-label="Email" p-clean> </po-email>
+    </div>
+
+
+  <po-divider >
+</po-divider>
+    <div class="po-row">
+      <po-button class="po-md-3"  p-label="Editar" [p-disabled]="!reactiveForm.valid" (p-click)="saveForm()"> </po-button>
+    </div>
+
+  </form>
+</po-container>
+
+
